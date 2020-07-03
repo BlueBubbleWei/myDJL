@@ -1,4 +1,6 @@
+# from models import  User
 from django.db import models
+
 
 # Create your models here.
 class Topic(models.Model):
@@ -23,3 +25,11 @@ class Entry(models.Model):
     def  __str__(self):
         """返回模型的字符串表示"""
         return  self.text[:50] + '...'
+
+class User(models.Model):
+    id = models.AutoField(primary_key = True)
+    username = models.CharField(max_length=32)
+    password = models.CharField(max_length=32)
+    email = models.CharField(max_length=32)
+
+
