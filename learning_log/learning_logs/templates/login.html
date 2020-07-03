@@ -31,7 +31,7 @@
     document.getElementById('login').onclick= function () {
         console.log('点击登录')
 
-    Ajax.post('http://127.0.0.1:8000/login/', {csrfmiddlewaretoken: 'tvnvk5NcRYMYHmRSqSni5ffIsnDU84bFeGJuIfSwLY8ccpGkppzjkNgfJbN79RYW',name:'大黑', sex: 'female'})
+    Ajax.post('./login/', {username:'大黑', password: 'heihei'})
     }
     var Ajax={
       get: function(url, fn) {

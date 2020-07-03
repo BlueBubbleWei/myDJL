@@ -28,13 +28,14 @@ def register(request):
             return redirect('/register/')
     return render(request, 'login.html')
 
-def login(request, data):
-    print('获取的数据', data)
+def login(request):
+    print('获取的数据', request)
     # 定一个为空的数据接收
     error_msg = ''
     if request.methd == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+
         # 判断数据库中有没有账号密码
         ret = models.User.objects.filter(username=username, password=password)
         if ret:
